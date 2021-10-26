@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp2/BMICalculator/bmimainpage.dart';
 import 'package:myapp2/colors.dart';
 import 'package:myapp2/pages/home.dart';
-import 'package:myapp2/pages/choose_loc.dart';
 import 'package:myapp2/services/world_time.dart';
 
 final widgets = ['Weather app', 'BMI Calculator'];
@@ -15,8 +15,8 @@ class ListOfWidgets extends StatefulWidget {
 
 class _ListOfWidgetsState extends State<ListOfWidgets> {
   List<Route> myRoute = [
-    MaterialPageRoute(builder: (_) => Home()),
-    MaterialPageRoute(builder: (_) => ChooseLocation())
+    MaterialPageRoute(builder: (_) => const Home()),
+    MaterialPageRoute(builder: (_) => BMICalculator())
   ];
 
   @override

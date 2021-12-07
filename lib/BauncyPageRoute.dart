@@ -7,7 +7,7 @@ class BouncyPageRoute extends PageRouteBuilder {
   final Widget widget;
   BouncyPageRoute({required this.widget})
       : super(
-            transitionDuration: const Duration(seconds: 2),
+            transitionDuration: const Duration(seconds: 1),
             transitionsBuilder: (BuildContext context,
                 Animation<double> animation,
                 Animation<double> secAnimation,

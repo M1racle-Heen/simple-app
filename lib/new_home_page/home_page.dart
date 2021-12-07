@@ -28,6 +28,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   VideoPlayerController? _controller;
   late WorldTime instance;
+  bool isMusicPlaying = true;
 
   @override
   void initState() {
@@ -201,6 +202,19 @@ class _HomePageState extends State<HomePage> {
                 ),
               )
             ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.orangeAccent,
+            child: Icon(Icons.music_off_rounded),
+            onPressed: () {
+              if(isMusicPlaying == true){
+                isMusicPlaying = false;
+                _controller!.setVolume(0);
+              }else{
+                isMusicPlaying = true;
+                _controller!.setVolume(1);
+              }
+            },
           ),
         ),
       ),

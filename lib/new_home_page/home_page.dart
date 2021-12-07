@@ -18,7 +18,6 @@ import 'package:myapp2/services/world_time.dart';
 import 'package:video_player/video_player.dart';
 import '../BauncyPageRoute.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -43,15 +42,11 @@ class _HomePageState extends State<HomePage> {
       });
   }
 
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
           appBar: AppBar(
-
             toolbarHeight: 70.0,
             actions: [
               IconButton(
@@ -59,19 +54,20 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                       context, BouncyPageRoute(widget: const ChatApp()));
                 },
-                icon: const Icon(Icons.chat),
+                icon: Icon(Icons.chat),
               ),
               IconButton(
-                  onPressed: () async {
-                    showSearch(context: context, delegate: WidgetSearch());
+                  onPressed: () {
+                    Navigator.push(
+                        context, BouncyPageRoute(widget: const Search()));
                   },
-                  icon: const Icon(Icons.search)),
+                  icon: Icon(Icons.search)),
               IconButton(
                   onPressed: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: Settings()));
                   },
-                  icon: const Icon(Icons.settings)),
+                  icon: Icon(Icons.settings)),
             ],
             backgroundColor: dark,
             // centerTitle: true,
@@ -95,62 +91,62 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(color: dark),
               ),
               ListTile(
-                  title: const Text("Time"),
-                  leading: const Icon(Icons.access_time),
+                  title: Text("Time"),
+                  leading: Icon(Icons.access_time),
                   onTap: (){
-                    Navigator.push(context, BouncyPageRoute(widget: const Home()));
+                    Navigator.pushNamed(context, BouncyPageRoute(widget: const Home()));
                   }),
               ListTile(
-                  title: const Text("Weather"),
-                  leading: const Icon(Icons.cloud),
+                  title: Text("Weather"),
+                  leading: Icon(Icons.cloud),
                   onTap: () {
                     Navigator.push(context, BouncyPageRoute(widget: Weather()));
                   }),
               ListTile(
-                  title: const Text("BMI Calculator"),
-                  leading: const Icon(Icons.accessibility_new_rounded),
+                  title: Text("BMI Calculator"),
+                  leading: Icon(Icons.accessibility_new_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: const InputPage()));
                   }),
               ListTile(
-                  title: const Text("Music Player"),
-                  leading: const Icon(Icons.music_note_rounded),
+                  title: Text("Music Player"),
+                  leading: Icon(Icons.music_note_rounded),
                   onTap: () {
                     Navigator.push(
-                        context, BouncyPageRoute(widget: const MusicApp()));
+                        context, BouncyPageRoute(widget: MusicApp()));
                   }),
               ListTile(
-                  title: const Text("Note"),
-                  leading: const Icon(Icons.sticky_note_2_rounded),
+                  title: Text("Note"),
+                  leading: Icon(Icons.sticky_note_2_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: const TasksScreen()));
                   }),
               ListTile(
-                  title: const Text("Map"),
-                  leading: const Icon(Icons.map_rounded),
+                  title: Text("Map"),
+                  leading: Icon(Icons.map_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: MapScreen()));
                   }),
               ListTile(
-                  title: const Text("Text Recognition"),
-                  leading: const Icon(Icons.text_fields_rounded),
+                  title: Text("Text Recognition"),
+                  leading: Icon(Icons.text_fields_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: TextRecognition()));
                   }),
               ListTile(
-                  title: const Text("Paint"),
-                  leading: const Icon(Icons.color_lens_rounded),
+                  title: Text("Paint"),
+                  leading: Icon(Icons.color_lens_rounded),
                   onTap: () {
                     Navigator.push(
-                        context, BouncyPageRoute(widget: const PaintApp()));
+                        context, BouncyPageRoute(widget: PaintApp()));
                   }),
               ListTile(
-                  title: const Text("Calculator"),
-                  leading: const Icon(Icons.calculate_rounded),
+                  title: Text("Calculator"),
+                  leading: Icon(Icons.calculate_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: CalculatorApp()));
@@ -171,7 +167,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Center(
                 child: Container(
-                  padding: const EdgeInsets.only(top: 5.0),
+                  padding: EdgeInsets.only(top: 5.0),
                   height: 60,
                   child: DefaultTextStyle(
                     style: GoogleFonts.bebasNeue(

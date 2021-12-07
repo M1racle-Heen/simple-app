@@ -10,6 +10,7 @@ class TextRecognition extends StatefulWidget {
 class _TextRecognitionState extends State<TextRecognition> {
   @override
   Widget build(BuildContext context) => Scaffold(
+    backgroundColor: Colors.white,
     appBar: AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: Colors.lightBlue,

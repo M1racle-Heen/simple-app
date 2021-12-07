@@ -120,7 +120,7 @@ class _MusicAppState extends State<MusicApp> {
     });
   }
 
-  Color? bgColor;
+  Color? bgColor = Colors.amber;
   late ColorStream colorStream;
 
   @override

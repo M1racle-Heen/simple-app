@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp2/BauncyPageRoute.dart';
 import 'package:myapp2/TimeApp/choose_loc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp2/services/world_time.dart';
 import '/colors.dart';
 
 class Home extends StatefulWidget {
@@ -14,15 +15,30 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Map data = {};
+  WorldTime data = WorldTime(location: 'Almaty', flag:'flags/kz.png', url: "Asia/Almaty");
+  String time = "";
+  late bool isDayTime;
+
+  @override
+  void initState(){
+    super.initState();
+    getTime();
+  }
+
+  Future<void> getTime() async{
+    await data.getTime();
+    setState((){
+      time = data.time;
+      isDayTime = data.isDayTime;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    data = data.isNotEmpty
-        ? data
-        : ModalRoute.of(context)!.settings.arguments as Map;
 
-    String bgImage = data['isDayTime'] ? 'day.png' : 'night.png';
-    Color bgColor = data['isDayTime'] ? Colors.blue : Colors.indigo;
+
+    String bgImage = data.isDayTime ? 'day.png' : 'night.png';
+    Color bgColor = data.isDayTime ? Colors.blue : Colors.indigo;
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -68,12 +84,12 @@ class _HomeState extends State<Home> {
                     dynamic result = await Navigator.push(context,
                         BouncyPageRoute(widget: const ChooseLocation()));
                     setState(() {
-                      data = {
-                        'time': result['time'],
-                        'location': result['location'],
-                        'isDayTime': result['isDayTime'],
-                        'flag': result['flag'],
-                      };
+                      data.location = result['location'];
+                      data.time = result['time'];
+                      time = result['time'];
+                      data.isDayTime = result['isDayTime'];
+                      isDayTime = result['isDayTime'];
+                      data.flag = result['flag'];
                     });
                   },
                   icon: Icon(
@@ -94,7 +110,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      data['location'],
+                      data.location,
                       style: GoogleFonts.barlow(
                         fontSize: 40.0,
                         fontWeight: FontWeight.w400,
@@ -108,7 +124,7 @@ class _HomeState extends State<Home> {
                   height: 20.0,
                 ),
                 Text(
-                  data['time'],
+                  time,
                   style: const TextStyle(fontSize: 66.0, color: Colors.white),
                 ),
               ],

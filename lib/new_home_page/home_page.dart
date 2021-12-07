@@ -27,7 +27,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   VideoPlayerController? _controller;
-  late WorldTime instance;
 
   @override
   void initState() {
@@ -43,25 +42,28 @@ class _HomePageState extends State<HomePage> {
       });
   }
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
+
             toolbarHeight: 70.0,
             actions: [
               IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, BouncyPageRoute(widget: const Search()));
+                  onPressed: () async {
+                    showSearch(context: context, delegate: WidgetSearch());
                   },
-                  icon: Icon(Icons.search)),
+                  icon: const Icon(Icons.search)),
               IconButton(
                   onPressed: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: Settings()));
                   },
-                  icon: Icon(Icons.settings)),
+                  icon: const Icon(Icons.settings)),
             ],
             backgroundColor: dark,
             // centerTitle: true,
@@ -85,73 +87,62 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(color: dark),
               ),
               ListTile(
-                  title: Text("Time"),
-                  leading: Icon(Icons.access_time),
-                  onTap: () async {
-                    instance = WorldTime(
-                      location: 'Almaty',
-                      flag: 'flags/kz.png',
-                      url: "Asia/Almaty",
-                    );
-                    await instance.getTime();
-                    Navigator.pushNamed(context, '/time-app', arguments: {
-                      'location': instance.location,
-                      'flag': instance.flag,
-                      'time': instance.time,
-                      'isDayTime': instance.isDayTime,
-                    });
+                  title: const Text("Time"),
+                  leading: const Icon(Icons.access_time),
+                  onTap: (){
+                    Navigator.push(context, BouncyPageRoute(widget: const Home()));
                   }),
               ListTile(
-                  title: Text("Weather"),
-                  leading: Icon(Icons.cloud),
+                  title: const Text("Weather"),
+                  leading: const Icon(Icons.cloud),
                   onTap: () {
                     Navigator.push(context, BouncyPageRoute(widget: Weather()));
                   }),
               ListTile(
-                  title: Text("BMI Calculator"),
-                  leading: Icon(Icons.accessibility_new_rounded),
+                  title: const Text("BMI Calculator"),
+                  leading: const Icon(Icons.accessibility_new_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: const InputPage()));
                   }),
               ListTile(
-                  title: Text("Music Player"),
-                  leading: Icon(Icons.music_note_rounded),
+                  title: const Text("Music Player"),
+                  leading: const Icon(Icons.music_note_rounded),
                   onTap: () {
                     Navigator.push(
-                        context, BouncyPageRoute(widget: MusicApp()));
+                        context, BouncyPageRoute(widget: const MusicApp()));
                   }),
               ListTile(
-                  title: Text("Note"),
-                  leading: Icon(Icons.sticky_note_2_rounded),
+                  title: const Text("Note"),
+                  leading: const Icon(Icons.sticky_note_2_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: const TasksScreen()));
                   }),
               ListTile(
-                  title: Text("Map"),
-                  leading: Icon(Icons.map_rounded),
+                  title: const Text("Map"),
+                  leading: const Icon(Icons.map_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: MapScreen()));
                   }),
               ListTile(
-                  title: Text("Text Recognition"),
-                  leading: Icon(Icons.text_fields_rounded),
+                  title: const Text("Text Recognition"),
+                  leading: const Icon(Icons.text_fields_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: TextRecognition()));
                   }),
               ListTile(
-                  title: Text("Paint"),
-                  leading: Icon(Icons.color_lens_rounded),
+                  title: const Text("Paint"),
+                  leading: const Icon(Icons.color_lens_rounded),
                   onTap: () {
                     Navigator.push(
-                        context, BouncyPageRoute(widget: PaintApp()));
+                        context, BouncyPageRoute(widget: const PaintApp()));
                   }),
               ListTile(
-                  title: Text("Calculator"),
-                  leading: Icon(Icons.calculate_rounded),
+                  title: const Text("Calculator"),
+                  leading: const Icon(Icons.calculate_rounded),
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: CalculatorApp()));
@@ -172,7 +163,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Center(
                 child: Container(
-                  padding: EdgeInsets.only(top: 5.0),
+                  padding: const EdgeInsets.only(top: 5.0),
                   height: 60,
                   child: DefaultTextStyle(
                     style: GoogleFonts.bebasNeue(

@@ -8,6 +8,7 @@ class WorldTime {
   String flag = "";
   String url = "";
   bool isDayTime = false;
+  String pm = "";
 
   WorldTime({required this.location, required this.flag, required this.url});
 
@@ -20,13 +21,18 @@ class WorldTime {
 
       //get property from data
       String datetime = data["datetime"];
-      String offset = data["utc_offset"].substring(1, 3);
+      String offset = data["utc_offset"].substring(0, 3);
 
       //create date time object
       DateTime now = DateTime.parse(datetime);
       now = now.add(Duration(hours: int.parse(offset)));
-      isDayTime = now.hour > 6 && now.hour < 20 ? true : false;
       time = DateFormat.jm().format(now);
+
+
+      pm = time.toString().substring(time.toString().length - 2, time.toString().length);
+
+      isDayTime = (now.hour > 6 && pm == 'AM' && now.hour < 11) || (now.hour < 20 && pm == 'PM' && now.hour > 11) ? true : false;
+
     } catch (e) {
       time = 'could not get time data';
     }

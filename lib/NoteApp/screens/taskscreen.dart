@@ -6,6 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 class TasksScreen extends StatelessWidget {
   const TasksScreen({Key? key}) : super(key: key);
 
+  // TODO need to add to users in firebase tasks field. From where we can get tasks to show in app
+
   Widget buildButtomSheet(BuildContext context) => AddTasksScreen();
 
   @override

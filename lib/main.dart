@@ -28,7 +28,7 @@ void main() async {
         '/home-page': (context) => const HomePage(),
         '/chat': (context) => const ChatApp(),
         '/first': (context) => const LoadingPage(),
-        '/second': (context) => const ListOfWidgets(),
+        // '/second': (context) => const ListOfWidgets(),
         '/time-app': (context) => const Home(),
         '/time-app-location': (context) => const ChooseLocation(),
         '/bmi-app': (context) => const InputPage(),
@@ -36,7 +36,7 @@ void main() async {
         '/google-maps': (context) => MapScreen(),
         '/': (context) => const Loading(),
         '/weather': (context) => Weather(),
-        '/paint': (context) => PaintApp(),
+        '/paint': (context) => const PaintApp(),
         //'/home': (context) => const ListOfWidgets(),
       },
       theme: ThemeData(

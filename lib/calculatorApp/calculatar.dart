@@ -9,7 +9,7 @@ class CalculatorApp extends StatefulWidget {
 
 
   @override
-  _CalculatorAppState createState() => new _CalculatorAppState();
+  _CalculatorAppState createState() =>  _CalculatorAppState();
 }
 
 class _CalculatorAppState extends State<CalculatorApp> {
@@ -86,10 +86,10 @@ class _CalculatorAppState extends State<CalculatorApp> {
   }
 
   Widget buildButton(String buttonText) {
-    return new Expanded(
-      child: new OutlineButton(
-        padding: new EdgeInsets.all(24.0),
-        child: new Text(buttonText,
+    return  Expanded(
+      child:  OutlineButton(
+        padding:  EdgeInsets.all(24.0),
+        child:  Text(buttonText,
           style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold
@@ -104,60 +104,72 @@ class _CalculatorAppState extends State<CalculatorApp> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
+    return Scaffold(
+      backgroundColor: Colors.white,
+        appBar: AppBar(
           centerTitle: true,
-          title: new Text("Calculator"),
+          title: Text("Calculator"),
         ),
-        body: new Container(
-            child: new Column(
+        body: Container(
+            child: Column(
               children: <Widget>[
-                new Container(
+                Container(
                     alignment: Alignment.centerRight,
-                    padding: new EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         vertical: 24.0,
                         horizontal: 12.0
                     ),
-                    child: new Text(output, style: new TextStyle(
-                      fontSize: 48.0,
-                      fontWeight: FontWeight.bold,
+                    child: Row(
+                        children:[
+                          Text(output.substring(0,output.lastIndexOf('.') + 1), style: const TextStyle(
+                            fontSize: 48.0,
+                            fontWeight: FontWeight.bold,
+                            )
+                          ),
 
-                    ))),
-                new Expanded(
-                  child: new Divider(),
+                        Text(output.substring(output.lastIndexOf('.') + 1,output.length), style: const TextStyle(
+                          fontSize: 48.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                          )
+                        )]
+                    ),
+                ),
+                 const Expanded(
+                  child:  Divider(),
                 ),
 
 
-                new Column(children: [
-                  new Row(children: [
+                 Column(children: [
+                   Row(children: [
                     buildButton("7"),
                     buildButton("8"),
                     buildButton("9"),
                     buildButton("/")
                   ]),
 
-                  new Row(children: [
+                   Row(children: [
                     buildButton("4"),
                     buildButton("5"),
                     buildButton("6"),
                     buildButton("X")
                   ]),
 
-                  new Row(children: [
+                   Row(children: [
                     buildButton("1"),
                     buildButton("2"),
                     buildButton("3"),
                     buildButton("-")
                   ]),
 
-                  new Row(children: [
+                   Row(children: [
                     buildButton("."),
                     buildButton("0"),
                     buildButton("00"),
                     buildButton("+")
                   ]),
 
-                  new Row(children: [
+                   Row(children: [
                     buildButton("CLEAR"),
                     buildButton("="),
                   ])

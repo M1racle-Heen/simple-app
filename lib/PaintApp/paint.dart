@@ -8,6 +8,7 @@ class PaintApp extends StatefulWidget {
   @override
   _PaintAppState createState() => _PaintAppState();
 }
+// TODO: TOO LAGGY
 // TODO: ERASER / FILL IN / DRAW LINES-CIRCLES-RECTANGLES / RGB PALETTE
 class _PaintAppState extends State<PaintApp> {
   Color selectedColor = Colors.black;
@@ -27,8 +28,10 @@ class _PaintAppState extends State<PaintApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Paint", style: TextStyle(fontSize: 25.0)),
+        title: const Text("Paint", style: TextStyle(fontSize: 25.0)),
+        backgroundColor: Colors.blue,
         centerTitle: true,
       ),
       body: Stack(
@@ -69,7 +72,7 @@ class _PaintAppState extends State<PaintApp> {
             },
             child: CustomPaint(
                 painter: DrawingPainter(drawingPoints),
-                child: Container(
+                child: SizedBox(
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                 )),
@@ -90,8 +93,8 @@ class _PaintAppState extends State<PaintApp> {
                     }),
                 ElevatedButton.icon(
                   onPressed: () => setState(() => drawingPoints = []),
-                  icon: Icon(Icons.clear),
-                  label: Text("clear board"),
+                  icon: const Icon(Icons.clear),
+                  label: const Text("clear board"),
                 )
               ],
             ),
@@ -101,7 +104,7 @@ class _PaintAppState extends State<PaintApp> {
       bottomNavigationBar: BottomAppBar(
         child: Container(
           color: Colors.grey[200],
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(

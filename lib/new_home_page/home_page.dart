@@ -11,6 +11,7 @@ import 'package:myapp2/TextRecognition/text_recognition.dart';
 import 'package:myapp2/TimeApp/home.dart';
 import 'package:myapp2/Weather_app/weather_runner.dart';
 import 'package:myapp2/calculatorApp/calculatar.dart';
+import 'package:myapp2/chatdir/chat_app.dart';
 import 'package:myapp2/colors.dart';
 import 'package:myapp2/components_of_music_app/music_player.dart';
 import 'package:myapp2/services/world_time.dart';
@@ -53,6 +54,13 @@ class _HomePageState extends State<HomePage> {
 
             toolbarHeight: 70.0,
             actions: [
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, BouncyPageRoute(widget: const ChatApp()));
+                },
+                icon: const Icon(Icons.chat),
+              ),
               IconButton(
                   onPressed: () async {
                     showSearch(context: context, delegate: WidgetSearch());

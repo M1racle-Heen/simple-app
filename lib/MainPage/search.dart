@@ -9,7 +9,6 @@ import 'package:myapp2/Weather_app/weather_runner.dart';
 import 'package:myapp2/components_of_music_app/music_player.dart';
 import 'package:myapp2/services/world_time.dart';
 import '../BauncyPageRoute.dart';
-import '../colors.dart';
 import 'package:myapp2/TextRecognition/text_recognition.dart';
 import 'package:myapp2/PaintApp/paint.dart';
 
@@ -39,9 +38,9 @@ class WidgetSearch extends SearchDelegate<String> {
     const MusicApp(),
     const MyExample(),
     const TasksScreen(),
-    MapScreen(),
-    Weather(),
-    TextRecognition(),
+    const MapScreen(),
+    const Weather(),
+    const TextRecognition(),
     const PaintApp(),
   ];
 

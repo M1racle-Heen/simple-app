@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -6,9 +8,12 @@ import 'package:myapp2/NewLogin/Login/shared/firebase_authentication.dart';
 
 import '../colors.dart';
 
-// TODO: CHANGE USERNAME, PHONE NUMB FUNCTIONALITY / CHANGE NULL IN PHONE NUMBER TO SOME DEFAULT VALUE // ADD ABOUT ME
+// ignore: todo
+// // TODO: CHANGE USERNAME, PHONE NUMB FUNCTIONALITY / CHANGE NULL IN PHONE NUMBER TO SOME DEFAULT VALUE // ADD ABOUT ME
 
 class EditProfilePage extends StatefulWidget {
+  const EditProfilePage({Key? key}) : super(key: key);
+
   @override
   _EditProfilePageState createState() => _EditProfilePageState();
 }
@@ -95,7 +100,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                 spreadRadius: 2,
                                 blurRadius: 10,
                                 color: Colors.black.withOpacity(0.1),
-                                offset: Offset(0, 10))
+                                offset: const Offset(0, 10))
                           ],
                           shape: BoxShape.circle,
                           image: const DecorationImage(
@@ -138,7 +143,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
               const SizedBox(
                 height: 20,
               ),
-              // TODO ADD ABOUT ME AND DO A PFP'S
+              // ignore: todo
+              // // TODO ADD ABOUT ME AND DO A PFP'S
               // Expanded(
               //   child: Container(
               //     height: 120,

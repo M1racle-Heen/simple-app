@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextRecognition extends StatefulWidget {
+  const TextRecognition({Key? key}) : super(key: key);
+
   @override
   _TextRecognitionState createState() => _TextRecognitionState();
 }

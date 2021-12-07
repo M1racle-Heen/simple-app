@@ -10,7 +10,6 @@ import 'package:myapp2/components_of_music_app/music_player.dart';
 import 'package:myapp2/TimeApp/home.dart';
 import 'package:myapp2/TimeApp/choose_loc.dart';
 import 'package:myapp2/loading_page.dart';
-import 'package:myapp2/MainPage/choose.dart';
 import 'package:myapp2/GoogleMap/map.dart';
 import 'package:myapp2/new_home_page/home_page.dart';
 
@@ -33,9 +32,9 @@ void main() async {
         '/time-app-location': (context) => const ChooseLocation(),
         '/bmi-app': (context) => const InputPage(),
         '/music_player': (context) => const MusicApp(),
-        '/google-maps': (context) => MapScreen(),
+        '/google-maps': (context) => const MapScreen(),
         '/': (context) => const Loading(),
-        '/weather': (context) => Weather(),
+        '/weather': (context) => const Weather(),
         '/paint': (context) => const PaintApp(),
         //'/home': (context) => const ListOfWidgets(),
       },

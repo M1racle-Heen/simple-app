@@ -45,7 +45,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
   Widget buildImage() => Container(
     child: image != null
         ? Image.file(image!)
-        : Icon(Icons.photo, size: 80, color: Colors.black),
+        : const Icon(Icons.photo, size: 80, color: Colors.black),
   );
 
   Future pickImage() async {
@@ -58,18 +58,18 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text(
+                child: const Text(
                   "Cancel",
                 ),
               ),
             ],
-            content: Container(
+            content: SizedBox(
               height: 120,
               child: Column(
                 children: [
                   ListTile(
-                    leading: Icon(Icons.camera),
-                    title: Text(
+                    leading: const Icon(Icons.camera),
+                    title: const Text(
                       "Camera",
                     ),
                     onTap: () async{
@@ -78,13 +78,13 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
                       setImage(File(file!.path));
                     },
                   ),
-                  Divider(
+                  const Divider(
                     height: 1,
                     color: Colors.black,
                   ),
                   ListTile(
-                    leading: Icon(Icons.image),
-                    title: Text(
+                    leading: const Icon(Icons.image),
+                    title: const Text(
                       "Gallery",
                     ),
                     onTap: () async{

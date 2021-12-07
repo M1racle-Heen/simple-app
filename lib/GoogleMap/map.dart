@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class MapScreen extends StatefulWidget {
+  const MapScreen({Key? key}) : super(key: key);
+
   @override
   _MapScreenState createState() => _MapScreenState();
 }

@@ -1,8 +1,8 @@
+// ignore_for_file: await_only_futures
+
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
 // import 'package:sms_autofill/sms_autofill.dart';
 
 final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -76,6 +76,7 @@ class FirebaseAuthentication {
       var parts = displayName.split('|');
       return parts[0];
     }
+    // ignore: empty_catches
     catch(e){
 
     }
@@ -88,6 +89,7 @@ class FirebaseAuthentication {
       var parts = displayName.split('|');
       return parts[1];
     }
+    // ignore: empty_catches
     catch(e){
 
     }
@@ -95,12 +97,14 @@ class FirebaseAuthentication {
   }
 
   getUserPhone(){
+    // ignore: avoid_print
     print(getCurrentUser().displayName.toString());
     var displayName = _firebaseAuth.currentUser!.displayName.toString();
     try {
     var parts = displayName.split('|');
     return parts[2];
     }
+    // ignore: empty_catches
     catch(e){
 
     }

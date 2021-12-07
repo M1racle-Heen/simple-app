@@ -3,29 +3,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp2/BauncyPageRoute.dart';
-import 'package:myapp2/NewLogin/Login/body_widget.dart';
 import 'package:myapp2/NewLogin/Login/login_screen.dart';
-import 'package:myapp2/NewLogin/welcome_page.dart';
 import 'package:myapp2/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp2/login/login.dart';
 
 import 'edit_profile.dart';
 
-String _message = "";
 
+// ignore: camel_case_types
 class cllii {
   static bool click = true;
 }
 
 class Settings extends StatefulWidget {
+  const Settings({Key? key}) : super(key: key);
+
   @override
   _SettingsState createState() => _SettingsState();
 }
 
 final List locale = [
-  {'name': 'ENGLISH', 'locale': Locale('en', 'US')},
-  {'name': 'RUSSIAN', 'locale': Locale('ru', 'RU')},
+  {'name': 'ENGLISH', 'locale': const Locale('en', 'US')},
+  {'name': 'RUSSIAN', 'locale': const Locale('ru', 'RU')},
 ];
 
 updateLanguage(Locale locale) {
@@ -74,7 +73,7 @@ class _SettingsState extends State<Settings> {
         color: (cllii.click == false) ? Colors.white : dark,
         child: Scrollbar(
           child: ListView(
-            padding: EdgeInsets.only(left: 16, top: 25, right: 16),
+            padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
             children: [
               Row(
                 children: [
@@ -217,6 +216,7 @@ class _SettingsState extends State<Settings> {
                   ],
                 ),
                 actions: [
+                  // ignore: deprecated_member_use
                   FlatButton(
                       onPressed: () {
                         Navigator.of(context).pop();
@@ -266,6 +266,7 @@ class _SettingsState extends State<Settings> {
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                    // ignore: deprecated_member_use
                     OutlineButton(
                       child: Text(
                           (cllii.click == false)
@@ -286,6 +287,7 @@ class _SettingsState extends State<Settings> {
                   ],
                 ),
                 actions: [
+                  // ignore: deprecated_member_use
                   FlatButton(
                     onPressed: () {
                       Navigator.of(context).pop();
@@ -386,7 +388,7 @@ GestureDetector buildEditProfile(BuildContext context, String title) {
   return GestureDetector(
     onTap: () {
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (BuildContext context) => EditProfilePage()));
+          builder: (BuildContext context) => const EditProfilePage()));
     },
     child: Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),

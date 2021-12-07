@@ -1,9 +1,13 @@
+// ignore_for_file: avoid_print, deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 
 
 
 class CalculatorApp extends StatefulWidget {
+  const CalculatorApp({Key? key}) : super(key: key);
+
   //CalculatorApp({Key? key, required this.title}) : super(key: key);
 
 
@@ -88,9 +92,9 @@ class _CalculatorAppState extends State<CalculatorApp> {
   Widget buildButton(String buttonText) {
     return  Expanded(
       child:  OutlineButton(
-        padding:  EdgeInsets.all(24.0),
+        padding:  const EdgeInsets.all(24.0),
         child:  Text(buttonText,
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold
           ),
@@ -108,8 +112,9 @@ class _CalculatorAppState extends State<CalculatorApp> {
       backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Calculator"),
+          title: const Text("Calculator"),
         ),
+        // ignore: avoid_unnecessary_containers
         body: Container(
             child: Column(
               children: <Widget>[

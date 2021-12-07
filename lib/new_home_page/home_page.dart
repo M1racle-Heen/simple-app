@@ -14,7 +14,6 @@ import 'package:myapp2/calculatorApp/calculatar.dart';
 import 'package:myapp2/chatdir/chat_app.dart';
 import 'package:myapp2/colors.dart';
 import 'package:myapp2/components_of_music_app/music_player.dart';
-import 'package:myapp2/services/world_time.dart';
 import 'package:video_player/video_player.dart';
 import '../BauncyPageRoute.dart';
 
@@ -67,7 +66,7 @@ class _HomePageState extends State<HomePage> {
               IconButton(
                   onPressed: () {
                     Navigator.push(
-                        context, BouncyPageRoute(widget: Settings()));
+                        context, BouncyPageRoute(widget: const Settings()));
                   },
                   icon: const Icon(Icons.settings)),
             ],
@@ -102,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                   title: const Text("Weather"),
                   leading: const Icon(Icons.cloud),
                   onTap: () {
-                    Navigator.push(context, BouncyPageRoute(widget: Weather()));
+                    Navigator.push(context, BouncyPageRoute(widget: const Weather()));
                   }),
               ListTile(
                   title: const Text("BMI Calculator"),
@@ -130,14 +129,14 @@ class _HomePageState extends State<HomePage> {
                   leading: const Icon(Icons.map_rounded),
                   onTap: () {
                     Navigator.push(
-                        context, BouncyPageRoute(widget: MapScreen()));
+                        context, BouncyPageRoute(widget: const MapScreen()));
                   }),
               ListTile(
                   title: const Text("Text Recognition"),
                   leading: const Icon(Icons.text_fields_rounded),
                   onTap: () {
                     Navigator.push(
-                        context, BouncyPageRoute(widget: TextRecognition()));
+                        context, BouncyPageRoute(widget: const TextRecognition()));
                   }),
               ListTile(
                   title: const Text("Paint"),
@@ -151,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                   leading: const Icon(Icons.calculate_rounded),
                   onTap: () {
                     Navigator.push(
-                        context, BouncyPageRoute(widget: CalculatorApp()));
+                        context, BouncyPageRoute(widget: const CalculatorApp()));
                   }),
             ],
           )),

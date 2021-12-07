@@ -1,8 +1,8 @@
+// ignore_for_file: await_only_futures, avoid_print, deprecated_member_use
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:myapp2/NewLogin/Login/shared/firebase_authentication.dart';
 import 'constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -111,7 +111,8 @@ class _ChatAppState extends State<ChatApp> {
 }
 
 class MessageBubble extends StatelessWidget {
-  MessageBubble({required this.sender, required this.text, required this.isMe});
+  // ignore: use_key_in_widget_constructors
+  const MessageBubble({required this.sender, required this.text, required this.isMe});
 
   final String sender;
   final String text;
@@ -120,7 +121,7 @@ class MessageBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment:
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
@@ -134,12 +135,12 @@ class MessageBubble extends StatelessWidget {
           ),
           Material(
             borderRadius: isMe
-                ? BorderRadius.only(
+                ? const BorderRadius.only(
                     topLeft: Radius.circular(30.0),
                     bottomLeft: Radius.circular(30.0),
                     bottomRight: Radius.circular(30.0),
                   )
-                : BorderRadius.only(
+                : const BorderRadius.only(
                     topRight: Radius.circular(30.0),
                     bottomLeft: Radius.circular(30.0),
                     bottomRight: Radius.circular(30.0),
@@ -147,7 +148,7 @@ class MessageBubble extends StatelessWidget {
             elevation: 5.0,
             color: isMe ? Colors.lightBlueAccent : Colors.white,
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(text,
                   style: TextStyle(
                     color: isMe ? Colors.white : Colors.black54,
@@ -170,6 +171,7 @@ class MessagesStream extends StatelessWidget {
       stream:
           _firestore.collection('messages').orderBy('timestamp').snapshots(),
       builder: (context, snapshot) {
+        // ignore: unused_local_variable
         List<MessageBubble> temp = [];
         if (!snapshot.hasData) {
           return const Center(

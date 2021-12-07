@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp2/BauncyPageRoute.dart';
-import 'package:myapp2/NewLogin/Login/login_screen.dart';
 
 class RoundedButton extends StatelessWidget {
   final String? text;

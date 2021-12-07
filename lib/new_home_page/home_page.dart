@@ -58,8 +58,7 @@ class _HomePageState extends State<HomePage> {
               ),
               IconButton(
                   onPressed: () {
-                    Navigator.push(
-                        context, BouncyPageRoute(widget: const Search()));
+                    WidgetSearch();
                   },
                   icon: Icon(Icons.search)),
               IconButton(
@@ -94,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                   title: Text("Time"),
                   leading: Icon(Icons.access_time),
                   onTap: (){
-                    Navigator.pushNamed(context, BouncyPageRoute(widget: const Home()));
+                    Navigator.push(context, BouncyPageRoute(widget: const Home()));
                   }),
               ListTile(
                   title: Text("Weather"),

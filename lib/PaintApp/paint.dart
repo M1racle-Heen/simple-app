@@ -8,7 +8,9 @@ class PaintApp extends StatefulWidget {
   @override
   _PaintAppState createState() => _PaintAppState();
 }
+// ignore: todo
 // TODO: TOO LAGGY
+// ignore: todo
 // TODO: ERASER / FILL IN / DRAW LINES-CIRCLES-RECTANGLES / RGB PALETTE
 class _PaintAppState extends State<PaintApp> {
   Color selectedColor = Colors.black;

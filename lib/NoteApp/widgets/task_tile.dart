@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class TaskTile extends StatelessWidget {
+  const TaskTile({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return const ListTile(
       title: Text('This is a task'),
       trailing: TaskCheckbox(),
     );
@@ -11,6 +13,8 @@ class TaskTile extends StatelessWidget {
 }
 
 class TaskCheckbox extends StatefulWidget {
+  const TaskCheckbox({Key? key}) : super(key: key);
+
   @override
   State<TaskCheckbox> createState() => _TaskCheckboxState();
 }

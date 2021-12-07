@@ -6,16 +6,17 @@ import 'package:google_fonts/google_fonts.dart';
 class TasksScreen extends StatelessWidget {
   const TasksScreen({Key? key}) : super(key: key);
 
+  // ignore: todo
   // TODO need to add to users in firebase tasks field. From where we can get tasks to show in app
 
-  Widget buildButtomSheet(BuildContext context) => AddTasksScreen();
+  Widget buildButtomSheet(BuildContext context) => const AddTasksScreen();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           showModalBottomSheet(context: context, builder: buildButtomSheet);
         },
@@ -82,14 +83,14 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20.0),
                     topRight: Radius.circular(20.0),
                   )),
-              child: TasksList(),
+              child: const TasksList(),
             ),
           ),
         ],

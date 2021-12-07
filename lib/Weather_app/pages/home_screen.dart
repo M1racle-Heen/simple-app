@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';
-import 'package:myapp2/MainPage/choose.dart';
 import 'package:myapp2/Weather_app/constants.dart';
 import 'package:myapp2/Weather_app/pages/city_screen.dart';
 import 'package:myapp2/Weather_app/services/weather.dart';

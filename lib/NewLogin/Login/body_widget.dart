@@ -1,12 +1,11 @@
+// ignore_for_file: prefer_final_fields, unused_field, unused_element
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:myapp2/BauncyPageRoute.dart';
-import 'package:myapp2/MainPage/choose.dart';
-import 'package:myapp2/NewLogin/Login/shared/firebase_authentication.dart';
 import 'package:myapp2/new_home_page/home_page.dart';
 import 'background_widget.dart';
 import 'rounded_input.dart';
@@ -19,10 +18,13 @@ final TextEditingController txtUserName = TextEditingController();
 final TextEditingController txtPassword = TextEditingController();
 
 class BodyWidget extends StatefulWidget {
+  const BodyWidget({Key? key}) : super(key: key);
+
   @override
   BodyWidgetState createState() => BodyWidgetState();
 }
 
+// ignore: duplicate_ignore
 class BodyWidgetState extends State<BodyWidget> {
   bool showSpinner = false;
   final authSend = FirebaseAuth.instance;
@@ -46,7 +48,7 @@ class BodyWidgetState extends State<BodyWidget> {
 
     // set up the button
     Widget okButton = TextButton(
-      child: Text("OK"),
+      child: const Text("OK"),
       onPressed: () {
         Navigator.of(context).pop();
       },
@@ -54,8 +56,8 @@ class BodyWidgetState extends State<BodyWidget> {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: Text("Error."),
-      content: Text("Email or password is incorrect."),
+      title: const Text("Error."),
+      content: const Text("Email or password is incorrect."),
       actions: [
         okButton,
       ],
@@ -83,7 +85,7 @@ class BodyWidgetState extends State<BodyWidget> {
           key: formKey,
           child: BackgroundWidget(
             child: ListView(
-              padding: EdgeInsets.only(top: 110),
+              padding: const EdgeInsets.only(top: 110),
               children: [
                 Form(
                   child: Column(
@@ -125,6 +127,7 @@ class BodyWidgetState extends State<BodyWidget> {
                                 await authSend.signInWithEmailAndPassword(
                                     email: email, password: password);
                             // print(user.user!.displayName);
+                            // ignore: unnecessary_null_comparison
                             if (user != null) {
                               Navigator.push(
                                   context,
@@ -139,7 +142,7 @@ class BodyWidgetState extends State<BodyWidget> {
                             setState(() {
                               showSpinner = false;
                             });
-                          };
+                          }
                         },
                         color: Colors.blueAccent,
                       ),

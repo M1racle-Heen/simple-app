@@ -132,6 +132,7 @@ class _MusicAppState extends State<MusicApp> {
 
   // @override
   // void dispose() {
+  // ignore: todo
   //   // TODO: implement dispose
   //   audioPlayer.pause();
   //   super.dispose();

@@ -4,6 +4,8 @@ import 'package:myapp2/Weather_app/pages/home_screen.dart';
 import 'package:myapp2/Weather_app/services/weather.dart';
 
 class LoadingScreenL extends StatefulWidget {
+  const LoadingScreenL({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _LoadingScreenState();

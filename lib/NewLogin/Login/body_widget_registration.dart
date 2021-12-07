@@ -1,16 +1,11 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:myapp2/NewLogin/Login/background_widget.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myapp2/BauncyPageRoute.dart';
-import 'package:myapp2/MainPage/choose.dart';
-import 'package:myapp2/NewLogin/Login/body_widget.dart';
 import 'package:myapp2/NewLogin/Login/login_screen.dart';
 import 'package:myapp2/NewLogin/Login/shared/firebase_authentication.dart';
-import 'package:myapp2/login/login.dart';
 import 'background_widget.dart';
 import 'rounded_input.dart';
 import 'rounded_password.dart';
@@ -24,6 +19,7 @@ class BodyWidgetRegistration extends StatefulWidget {
 }
 
 class _BodyWidgetRegistrationState extends State<BodyWidgetRegistration> {
+  // ignore: unused_field
   final _auth = FirebaseAuth.instance;
   String _email = "";
   String _username = "";
@@ -42,7 +38,7 @@ class _BodyWidgetRegistrationState extends State<BodyWidgetRegistration> {
 
     // set up the button
     Widget okButton = TextButton(
-      child: Text("OK"),
+      child: const Text("OK"),
       onPressed: () {
         Navigator.of(context).pop();
       },
@@ -58,7 +54,7 @@ class _BodyWidgetRegistrationState extends State<BodyWidgetRegistration> {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: Text("Error."),
+      title: const Text("Error."),
     content: Text(content),
       actions: [
         okButton,
@@ -83,7 +79,7 @@ class _BodyWidgetRegistrationState extends State<BodyWidgetRegistration> {
         inAsyncCall: showSpinner,
         child: BackgroundWidget(
           child: ListView(
-            padding: EdgeInsets.only(top: 70),
+            padding: const EdgeInsets.only(top: 70),
             children: [
               Form(
                 child: Column(
@@ -126,7 +122,7 @@ class _BodyWidgetRegistrationState extends State<BodyWidgetRegistration> {
                         // ),
                     RoundedButton(
                         text: "REGISTER",
-                        color: Color(0xFF0288D1),
+                        color: const Color(0xFF0288D1),
                         press: () async {
                           // print(_email);
                           // print(_password);
@@ -134,12 +130,14 @@ class _BodyWidgetRegistrationState extends State<BodyWidgetRegistration> {
 
                           FirebaseAuthentication auth = FirebaseAuthentication();
                           if(_password.length > 5) {
+                            // ignore: todo
                             // TODO add checks back
                             auth.createUser(_email, _username, _password);
                               Navigator.push(context,
                                   BouncyPageRoute(widget: LoginScreen()));
                             }
                           else{
+                            // ignore: avoid_print
                             print("password must be at least 6 characters.");
                           }
                         }),
@@ -161,7 +159,7 @@ class RoundedButton extends StatefulWidget {
   final Function? press;
   final Color? color, textColor;
 
-  RoundedButton({
+  const RoundedButton({
     Key? key,
     this.text,
     this.press,

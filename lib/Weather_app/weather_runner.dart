@@ -3,6 +3,8 @@ import 'package:myapp2/Weather_app/constants.dart';
 import 'package:myapp2/Weather_app/pages/loading_screen.dart';
 
 class Weather extends StatelessWidget {
+  const Weather({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +19,7 @@ class Weather extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoadingScreenL(),
+      home: const LoadingScreenL(),
     );
   }
 }

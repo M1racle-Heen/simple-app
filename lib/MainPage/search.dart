@@ -46,6 +46,13 @@ class WidgetSearch extends SearchDelegate<String> {
   ];
 
   @override
+  ThemeData appBarTheme(BuildContext context) {
+    return Theme.of(context).copyWith(
+      scaffoldBackgroundColor: Colors.white,
+    );
+  }
+
+  @override
   List<Widget> buildActions(BuildContext context) => [
         IconButton(
           icon: const Icon(Icons.clear, size: 40),

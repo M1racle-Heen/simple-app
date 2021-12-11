@@ -33,6 +33,7 @@ void main() async {
         '/bmi-app': (context) => const InputPage(),
         '/music_player': (context) => const MusicApp(),
         '/google-maps': (context) => const MapScreen(),
+        
         '/': (context) => const Loading(),
         '/weather': (context) => const Weather(),
         '/paint': (context) => const PaintApp(),

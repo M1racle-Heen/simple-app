@@ -34,8 +34,11 @@ Mobile application written of flutter
 - Automating the tuning of our model
 - Learing an objects which representing a delayed computation.
 
+![Снимок экрана (103)](https://user-images.githubusercontent.com/70756496/145703088-eeb2e9fb-5d61-41f7-b4dc-6f779886a2de.png)
+
 **Getting Started**
 ----------
+
 - For help getting started with Flutter, view our online
 [documentation](http://flutter.io/).
 - also watch [this](https://youtu.be/5izFFbdHnWY) video.

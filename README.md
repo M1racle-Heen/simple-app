@@ -33,7 +33,9 @@ Mobile application written of flutter
 - Using navigations and interactivities
 - Automating the tuning of our model
 - Learing an objects which representing a delayed computation.
+
 ![Снимок экрана (103)](https://user-images.githubusercontent.com/70756496/145703088-eeb2e9fb-5d61-41f7-b4dc-6f779886a2de.png)
+
 **Getting Started**
 ----------
 

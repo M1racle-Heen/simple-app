@@ -103,8 +103,8 @@ class _SettingsState extends State<Settings> {
                 height: 10,
               ),
               buildEditProfile(context, "Edit Profile".tr),
-              buildAccountOptionRow(context, "Content settings".tr),
-              backgroundRow(context, "Background".tr),
+              buildAccountOptionRow(context, "Video backgrounds".tr),
+              backgroundRow(context, "Themes".tr),
               buildLanguageOptionRow(context, "Language".tr),
               buildAccountOptionRow(context, "Privacy".tr),
               const SizedBox(
@@ -207,13 +207,53 @@ class _SettingsState extends State<Settings> {
                 title: Text(title),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Text(
-                      "Option 1",
-                    ),
-                    Text("Option 2"),
-                    Text("Option 3"),
-                  ],
+                  children: [
+                    CupertinoButton(child: Text("Space"), onPressed: () {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Ooops'),
+                          content: const Text('In process'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                    CupertinoButton(child: Text("Countryside"), onPressed: () {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Ooops'),
+                          content: const Text('In process'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                    CupertinoButton(child: Text("Chill"), onPressed: () {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Ooops'),
+                          content: const Text('In process'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                   ]
                 ),
                 actions: [
                   // ignore: deprecated_member_use

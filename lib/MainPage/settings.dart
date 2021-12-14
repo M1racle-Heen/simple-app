@@ -11,8 +11,9 @@ import 'edit_profile.dart';
 
 
 // ignore: camel_case_types
-class cllii {
+ class cllii {
   static bool click = true;
+
 }
 
 class Settings extends StatefulWidget {
@@ -31,23 +32,6 @@ updateLanguage(Locale locale) {
   Get.back();
   Get.updateLocale(locale);
 }
-
-// class _SettingsState extends State<Settings> {
-//   Widget returnWidget() {
-//     return Text(_message);
-//   }
-//
-//   void _showToast(BuildContext context) {
-//     final scaffold = ScaffoldMessenger.of(context);
-//     scaffold.showSnackBar(
-//       SnackBar(
-//           content: Text(_message),
-//           action: SnackBarAction(
-//             label: 'UNDO',
-//             onPressed: scaffold.hideCurrentSnackBar,
-//           )),
-//     );
-//   }
 
 class _SettingsState extends State<Settings> {
   final _auth = FirebaseAuth.instance;
@@ -151,9 +135,7 @@ class _SettingsState extends State<Settings> {
                                 ? Colors.black
                                 : Colors.white)),
 
-                    // padding: EdgeInsets.symmetric(horizontal: 40),
-                    // shape: RoundedRectangleBorder(
-                    //     borderRadius: BorderRadius.circular(20)),
+
                     onPressed: () {
                       _auth.signOut();
                       Navigator.push(

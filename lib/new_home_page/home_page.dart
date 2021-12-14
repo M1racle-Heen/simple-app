@@ -51,13 +51,7 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
             toolbarHeight: 70.0,
             actions: [
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, BouncyPageRoute(widget: const ChatApp()));
-                },
-                icon: const Icon(Icons.chat),
-              ),
+
               IconButton(
                   onPressed: () {
                     showSearch(context: context, delegate: WidgetSearch());
@@ -151,6 +145,13 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     Navigator.push(
                         context, BouncyPageRoute(widget: const CalculatorApp()));
+                  }),
+              ListTile(
+                  title: const Text("Chat"),
+                  leading: const Icon(Icons.chat),
+                  onTap: () {
+                    Navigator.push(
+                        context, BouncyPageRoute(widget: const ChatApp()));
                   }),
             ],
           )),

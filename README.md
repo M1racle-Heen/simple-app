@@ -48,7 +48,7 @@ Mobile application written of flutter
   <img src="https://user-images.githubusercontent.com/70756496/146875808-3d77ce00-0fd3-4ec5-bf28-69f504fff45a.png" width="100" />
   <img src="https://user-images.githubusercontent.com/70756496/146875871-97211802-19ee-4f97-9fb0-95656aa02edc.png" width="100" /> 
 </p>
-
+  
 **Getting Started**
 ----------
 
@@ -60,3 +60,4 @@ Mobile application written of flutter
 ----------
 - Developing application on Dart flutter
 - Every week we trying to modify and upgrade our project according to CSS 223 Flutter course and our instructor Bissenbay Dauletbayev
+- [presintation](https://onedrive.live.com/edit.aspx?resid=E7560BBB1FBF3817!116&ithint=file%2cpptx). 

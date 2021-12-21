@@ -60,4 +60,4 @@ Mobile application written of flutter
 ----------
 - Developing application on Dart flutter
 - Every week we trying to modify and upgrade our project according to CSS 223 Flutter course and our instructor Bissenbay Dauletbayev
-- [presintation](https://onedrive.live.com/edit.aspx?resid=E7560BBB1FBF3817!116&ithint=file%2cpptx). 
+- [presintation](https://1drv.ms/p/s!Ahc4vx-7C1bndNJ3byJH15Xta7o?e=V0lKxY). 

@@ -36,8 +36,7 @@ Mobile application written of flutter
 
 ![Снимок экрана (103)](https://user-images.githubusercontent.com/70756496/145703088-eeb2e9fb-5d61-41f7-b4dc-6f779886a2de.png)
 
-![Screenshot_1639311221](https://user-images.githubusercontent.com/70756496/146875751-01db3b3d-352f-4ffd-941d-1bdd66ba7780.png)
-![Screenshot_1639311225](https://user-images.githubusercontent.com/70756496/146875760-0d37d3db-2c3d-476a-b006-6b9791926007.png)
+![Screenshot_1639311221](https://user-images.githubusercontent.com/70756496/146875751-01db3b3d-352f-4ffd-941d-1bdd66ba7780.png) | ![Screenshot_1639311225](https://user-images.githubusercontent.com/70756496/146875760-0d37d3db-2c3d-476a-b006-6b9791926007.png)
 ![Screenshot_1639311263](https://user-images.githubusercontent.com/70756496/146875767-00b29015-f048-415c-97c9-d174fb548a14.png)
 ![Screenshot_1639311363](https://user-images.githubusercontent.com/70756496/146875840-9c61af36-1887-4a48-9840-14aeede778ee.png)
 ![Screenshot_1639311276](https://user-images.githubusercontent.com/70756496/146875771-eeea2da4-d351-467d-8eec-fbcf5df17f5f.png)
